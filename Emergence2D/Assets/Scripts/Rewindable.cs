@@ -22,7 +22,10 @@ public class Rewindable : MonoBehaviour
 
     private float rewindSpeed = 0.5f;
     private float rewindTimer = 0f;
-    public float customSlowFactor = 0.3f;
+
+    private bool wasRewinding = false;
+    private bool hasAppliedFastForward = false;
+    public float slowFactor = 0.3f;
 
     void Start()
     {
@@ -34,28 +37,69 @@ public class Rewindable : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.y < -20f)
+        {
+            Debug.LogWarning($"{name} fell through world! Resetting.");
+            transform.position = Vector2.zero;
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+        }
+
         if (TimeManager.IsRewinding)
         {
             if (rb != null) rb.isKinematic = true;
             Rewind();
             SetColor(Color.cyan);
+            wasRewinding = true;
+            return;
         }
-        else
+
+        if (wasRewinding)
         {
-            if (rb != null) rb.isKinematic = false;
-
-            Record();
-
-            float timeFactor = GetTimeFactor();
-
-            if (TimeManager.IsFastForwarding || TimeManager.TimeScale < 1f)
+            if (rb != null)
             {
-                if (rb != null)
-                    rb.linearVelocity *= timeFactor;
+                rb.isKinematic = false;
+
+                if (states.Count > 0)
+                {
+                    rb.linearVelocity = states[states.Count - 1].velocity;
+                    Debug.Log($"{name} resumed with velocity: {rb.linearVelocity}");
+                }
+            }
+            wasRewinding = false;
+        }
+
+        Record();
+
+        if (TimeManager.IsFastForwarding)
+        {
+            if (!hasAppliedFastForward && rb != null)
+            {
+                rb.linearVelocity *= 2f;
+                hasAppliedFastForward = true;
+                Debug.Log($"{name} fast forward started: velocity x2");
             }
 
-            SetColor(TimeManager.IsFastForwarding ? Color.yellow : originalColor);
+            SetColor(Color.yellow);
         }
+        else if (TimeManager.TimeScale < 1f)
+        {
+            if (rb != null)
+            {
+                Vector2 adjustedGravity = Physics2D.gravity * (slowFactor) * rb.gravityScale * Time.deltaTime;
+                rb.linearVelocity += adjustedGravity;
+
+                rb.linearVelocity *= Mathf.Lerp(1f, slowFactor, Time.deltaTime * 10f);
+            }
+
+            SetColor(Color.Lerp(originalColor, Color.gray, 0.5f));
+        }
+
+        else
+        {
+            hasAppliedFastForward = false;
+            SetColor(originalColor);
+        }
+
 
         HandleGhosts();
     }
@@ -64,14 +108,6 @@ public class Rewindable : MonoBehaviour
     {
         if (rend != null)
             rend.color = Color.Lerp(rend.color, targetColor, 10f * Time.unscaledDeltaTime);
-    }
-
-    float GetTimeFactor()
-    {
-        if (TimeManager.IsFastForwarding) return 2f;
-        if (TimeManager.TimeScale < 1f) return customSlowFactor;
-
-        return 1f;
     }
 
     void Record()
