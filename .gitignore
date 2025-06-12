@@ -1,0 +1,66 @@
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# User-specific settings
+UserSettings/
+*.userprefs
+
+# Crash reports and logs
+*.pidb
+*.svd
+*.opendb
+*.VC.db
+
+# Unity metadata
+*.unityproj
+*.sln
+*.csproj
+*.suo
+*.tmp
+*.vscode/
+*.VSCode/
+*.DS_Store
+
+# Keep Packages folder and custom content
+!Packages/
+!Packages/manifest.json
+!Packages/packages-lock.json
+
+
+# Auto-generated JetBrains Rider project files
+.idea/
+*.iml
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# Ignore Play mode settings
+ProjectSettings/EditorBuildSettings.asset
+
+# Exclude generated Lightmaps
+Assets/**/LightingData.asset
+Assets/**/ReflectionProbe-*.exr
+
+# Addressables
+Assets/AddressableAssetsData/
+
+# Ignore Unity Cloud Build files
+/UnityCloud/
+
+# Ignore ProBuilder auto-save files
+Assets/ProBuilderData/
+
+# Ignore logs, local caches, and temp files
+*.log
+*.bak
+*.cache
+*.tmp
+
+
