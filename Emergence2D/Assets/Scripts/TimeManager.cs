@@ -8,9 +8,9 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        if (!IsRewinding)
-            Time.timeScale = TimeScale;
+        Time.timeScale = 1f;
     }
+
 
     public void StartRewind()
     {
