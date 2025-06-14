@@ -2,30 +2,45 @@ using UnityEngine;
 
 public class NPCEmotionController : MonoBehaviour
 {
-    public enum EmotionType { Happy, Sad, Neutral }
+    public enum EmotionType { Neutral, Happy, Sad, Angry, Love }
 
-    public EmotionType currentEmotion = EmotionType.Happy;
-    [Range(1, 3)] public int emotionLevel = 1;
+    public EmotionType currentEmotion = EmotionType.Neutral;
 
     private SpriteRenderer rend;
+    private Rigidbody2D rb;
 
-    [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 1f;
+    [Header("Movement")]
+    public float moveSpeed = 1f;
     private Vector2 moveDirection;
-    private float directionChangeInterval = 2f;
+    private float changeDirectionTime = 2f;
     private float directionTimer = 0f;
+
+    private bool isFrozen = false;
+    private float freezeTimer = 0f;
+
+    [SerializeField] private GameObject neutralNPCPrefab;
+    private float birthCooldown = 5f;
+    private float birthTimer = 0f;
 
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        UpdateColor();
+        rb = GetComponent<Rigidbody2D>();
+        SetColor();
         PickNewDirection();
     }
 
     void Update()
     {
+        if (isFrozen)
+        {
+            freezeTimer -= Time.deltaTime;
+            if (freezeTimer <= 0f) isFrozen = false;
+            return;
+        }
+
         directionTimer += Time.deltaTime;
-        if (directionTimer >= directionChangeInterval)
+        if (directionTimer >= changeDirectionTime)
         {
             PickNewDirection();
             directionTimer = 0f;
@@ -33,102 +48,140 @@ public class NPCEmotionController : MonoBehaviour
 
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RandomizeEmotion();
-        }
+        if (currentEmotion == EmotionType.Love && birthTimer > 0f)
+            birthTimer -= Time.deltaTime;
     }
 
     void PickNewDirection()
     {
-        float x = Random.Range(-1f, 1f);
-        float y = Random.Range(-1f, 1f);
-        moveDirection = new Vector2(x, y).normalized;
+        moveDirection = Random.insideUnitCircle.normalized;
     }
 
-    void UpdateColor()
+    void SetColor()
     {
-        Color baseColor;
-
-
-        switch (currentEmotion)
+        Color c = currentEmotion switch
         {
-            case EmotionType.Happy:
-                baseColor = Color.yellow;
-                break;
-            case EmotionType.Sad:
-                baseColor = new Color(0.3f, 0.6f, 1f);
-                break;
-            case EmotionType.Neutral:
-                baseColor = Color.gray;
-                break;
-            default:
-                baseColor = Color.white;
-                break;
-        }
-
-
-        float brightness = 0.5f + (emotionLevel * 0.2f);
-        baseColor *= brightness;
-        baseColor.a = 1f;
-        rend.color = baseColor;
+            EmotionType.Happy => Color.yellow,
+            EmotionType.Sad => new Color(0.3f, 0.6f, 1f),
+            EmotionType.Angry => Color.red,
+            EmotionType.Love => Color.magenta,
+            EmotionType.Neutral => Color.gray,
+            _ => Color.white
+        };
+        if (rend != null)
+            rend.color = c;
     }
 
-    public void SetEmotion(EmotionType newType, int newLevel)
+    public void SetEmotion(EmotionType newEmotion)
     {
-        currentEmotion = newType;
-        emotionLevel = currentEmotion == EmotionType.Neutral ? 0 : Mathf.Clamp(newLevel, 1, 3);
-
-        UpdateColor();
+        currentEmotion = newEmotion;
+        SetColor();
     }
 
-    void RandomizeEmotion()
-    {
-        currentEmotion = (Random.value > 0.5f) ? EmotionType.Happy : EmotionType.Sad;
-        emotionLevel = Random.Range(1, 4);
-        UpdateColor();
-    }
-
-    public override string ToString()
-    {
-        return $"{name} - {currentEmotion} {emotionLevel}";
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        NPCEmotionController otherNPC = other.GetComponent<NPCEmotionController>();
+        var otherNPC = other.GetComponent<NPCEmotionController>();
         if (otherNPC == null || otherNPC == this) return;
 
-        if (currentEmotion == otherNPC.currentEmotion)
+        EmotionType a = currentEmotion;
+        EmotionType b = otherNPC.currentEmotion;
+
+        if (a == EmotionType.Neutral && b != EmotionType.Neutral)
+            SetEmotion(b);
+        if (b == EmotionType.Neutral && a != EmotionType.Neutral)
+            otherNPC.SetEmotion(a);
+
+        if (a == EmotionType.Happy && b == EmotionType.Happy) return;
+
+        if (a == EmotionType.Sad && b == EmotionType.Sad)
         {
-            if (emotionLevel < otherNPC.emotionLevel)
-            {
-                SetEmotion(currentEmotion, otherNPC.emotionLevel);
-            }
-            else if (emotionLevel > otherNPC.emotionLevel)
-            {
-                otherNPC.SetEmotion(currentEmotion, emotionLevel);
-            }
+            Destroy(gameObject);
+            Destroy(otherNPC.gameObject);
+            return;
         }
-        else
+
+        if (a == EmotionType.Angry && b == EmotionType.Angry)
         {
-            int levelDiff = Mathf.Abs(emotionLevel - otherNPC.emotionLevel);
+            if (Random.value > 0.5f) Destroy(gameObject);
+            else Destroy(otherNPC.gameObject);
+            return;
+        }
 
-            if (emotionLevel > otherNPC.emotionLevel)
+        if (a == EmotionType.Love && b == EmotionType.Love)
+        {
+            if (birthTimer <= 0f && otherNPC.birthTimer <= 0f && neutralNPCPrefab != null)
             {
-                otherNPC.SetEmotion(currentEmotion, Mathf.Min(3, emotionLevel - levelDiff));
+                Vector2 offset = Random.insideUnitCircle.normalized * 0.5f;
+                Instantiate(neutralNPCPrefab, transform.position + (Vector3)offset, Quaternion.identity);
+                birthTimer = 5f;
+                otherNPC.birthTimer = 5f;
             }
-            else if (emotionLevel < otherNPC.emotionLevel)
-            {
-                SetEmotion(otherNPC.currentEmotion, Mathf.Min(3, otherNPC.emotionLevel - levelDiff));
-            }
-            else
-            {
-                SetEmotion(EmotionType.Neutral, 0);
-                otherNPC.SetEmotion(EmotionType.Neutral, 0);
-                Debug.Log($"{name} and {other.name} neutralized each other.");
+            return;
+        }
 
-            }
+        if ((a == EmotionType.Happy && b == EmotionType.Sad) || (a == EmotionType.Sad && b == EmotionType.Happy))
+        {
+            SetEmotion(EmotionType.Neutral);
+            otherNPC.SetEmotion(EmotionType.Neutral);
+            return;
+        }
+
+        if ((a == EmotionType.Happy && b == EmotionType.Angry))
+        {
+            SetEmotion(EmotionType.Sad);
+            moveDirection = (transform.position - other.transform.position).normalized;
+            return;
+        }
+
+        if ((b == EmotionType.Happy && a == EmotionType.Angry))
+        {
+            otherNPC.SetEmotion(EmotionType.Sad);
+            otherNPC.moveDirection = (other.transform.position - transform.position).normalized;
+            return;
+        }
+
+        if (a == EmotionType.Sad && b == EmotionType.Angry)
+        {
+            SetEmotion(EmotionType.Angry);
+            return;
+        }
+
+        if (b == EmotionType.Sad && a == EmotionType.Angry)
+        {
+            otherNPC.SetEmotion(EmotionType.Angry);
+            return;
+        }
+
+        if (a == EmotionType.Happy && b == EmotionType.Love)
+        {
+            SetEmotion(EmotionType.Love);
+            return;
+        }
+
+        if (b == EmotionType.Happy && a == EmotionType.Love)
+        {
+            otherNPC.SetEmotion(EmotionType.Love);
+            return;
+        }
+
+        if (a == EmotionType.Angry && b == EmotionType.Love)
+        {
+            otherNPC.SetEmotion(EmotionType.Sad);
+            return;
+        }
+
+        if (b == EmotionType.Angry && a == EmotionType.Love)
+        {
+            SetEmotion(EmotionType.Sad);
+            return;
+        }
+
+        if ((a == EmotionType.Sad && b == EmotionType.Love) || (a == EmotionType.Love && b == EmotionType.Sad))
+        {
+            isFrozen = true;
+            otherNPC.isFrozen = true;
+            freezeTimer = 2f;
+            otherNPC.freezeTimer = 2f;
         }
     }
-
 }
