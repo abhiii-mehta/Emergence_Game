@@ -121,20 +121,20 @@ TextureImporter:
       name: SadBlob_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 15
-        width: 125
-        height: 126
+        x: 21
+        y: 16
+        width: 123
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 33d641398864fe310800000000000000
-      internalID: 1436444358551563571
+      spriteID: de294fa9468c0e041bd0685b31cf1a8e
+      internalID: -841326645
       vertices: []
       indices: 
       edges: []
@@ -143,20 +143,20 @@ TextureImporter:
       name: SadBlob_1
       rect:
         serializedVersion: 2
-        x: 184
-        y: 11
-        width: 133
-        height: 121
+        x: 185
+        y: 12
+        width: 131
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 77218a8efa8850070800000000000000
-      internalID: 8072008196235465335
+      spriteID: 938b69db756507b4eafac58f99c7ce4d
+      internalID: -179763379
       vertices: []
       indices: 
       edges: []
@@ -165,20 +165,20 @@ TextureImporter:
       name: SadBlob_2
       rect:
         serializedVersion: 2
-        x: 352
-        y: 13
-        width: 143
-        height: 111
+        x: 353
+        y: 14
+        width: 141
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1bf1a4793a8d10f30800000000000000
-      internalID: 4540148096495656881
+      spriteID: 2cccdec4e80325f4381dbdfd16ec5ae7
+      internalID: -1713271302
       vertices: []
       indices: 
       edges: []
@@ -187,20 +187,20 @@ TextureImporter:
       name: SadBlob_3
       rect:
         serializedVersion: 2
-        x: 523
-        y: 15
-        width: 125
-        height: 126
+        x: 524
+        y: 16
+        width: 123
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 51bd71658ec7444c0800000000000000
-      internalID: -4304178006540690667
+      spriteID: ebc91460fe38920418673db4e7261e89
+      internalID: 2107215194
       vertices: []
       indices: 
       edges: []
@@ -209,20 +209,20 @@ TextureImporter:
       name: SadBlob_4
       rect:
         serializedVersion: 2
-        x: 694
-        y: 15
-        width: 116
-        height: 133
+        x: 695
+        y: 16
+        width: 114
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 922d00093fb7511a0800000000000000
-      internalID: -6839424173068987863
+      spriteID: a2187892189a5364082e810e327cd55d
+      internalID: 832469048
       vertices: []
       indices: 
       edges: []
@@ -231,20 +231,20 @@ TextureImporter:
       name: SadBlob_5
       rect:
         serializedVersion: 2
-        x: 865
-        y: 16
-        width: 113
-        height: 147
+        x: 866
+        y: 17
+        width: 111
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 779ebca5dfde0f990800000000000000
-      internalID: -7354116519090198153
+      spriteID: 69c22480091901546951b1f393ab84ef
+      internalID: -1420832103
       vertices: []
       indices: 
       edges: []
@@ -253,20 +253,20 @@ TextureImporter:
       name: SadBlob_6
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 15
-        width: 115
-        height: 133
+        x: 1031
+        y: 16
+        width: 112
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 668f6b692e4d67530800000000000000
-      internalID: 3852500600918308966
+      spriteID: e2108f8962cd2b9449a3b2a9332d4dd7
+      internalID: 1990248679
       vertices: []
       indices: 
       edges: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0cf529c15ea69664fb76fed909c6cdb1
     internalID: 0
     vertices: []
     indices: 
@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SadBlob_0: -841326645
+      SadBlob_1: -179763379
+      SadBlob_2: -1713271302
+      SadBlob_3: 2107215194
+      SadBlob_4: 832469048
+      SadBlob_5: -1420832103
+      SadBlob_6: 1990248679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

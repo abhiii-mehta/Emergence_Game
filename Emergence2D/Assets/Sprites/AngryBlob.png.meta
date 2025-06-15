@@ -121,20 +121,20 @@ TextureImporter:
       name: AngryBlob_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 15
-        width: 125
-        height: 126
+        x: 21
+        y: 16
+        width: 123
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9a5470afde033bde0800000000000000
-      internalID: -1318656467229260375
+      spriteID: f21e6d83fb37f28449d708bec4f1536d
+      internalID: 191290516
       vertices: []
       indices: 
       edges: []
@@ -143,20 +143,20 @@ TextureImporter:
       name: AngryBlob_1
       rect:
         serializedVersion: 2
-        x: 184
-        y: 11
-        width: 133
-        height: 121
+        x: 185
+        y: 12
+        width: 131
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bbfa680c14f9d58e0800000000000000
-      internalID: -1703029979324436549
+      spriteID: f479ad7f9176f904e81a963f9188025d
+      internalID: -495129675
       vertices: []
       indices: 
       edges: []
@@ -165,20 +165,20 @@ TextureImporter:
       name: AngryBlob_2
       rect:
         serializedVersion: 2
-        x: 352
-        y: 13
-        width: 143
-        height: 111
+        x: 353
+        y: 14
+        width: 141
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 83682c1ca0c7ac790800000000000000
-      internalID: -7509053043044612552
+      spriteID: 68b69648be7748149b31fbca5467cce2
+      internalID: 1591136701
       vertices: []
       indices: 
       edges: []
@@ -187,20 +187,20 @@ TextureImporter:
       name: AngryBlob_3
       rect:
         serializedVersion: 2
-        x: 523
-        y: 15
-        width: 125
-        height: 126
+        x: 524
+        y: 16
+        width: 123
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 22652d8f852e6d130800000000000000
-      internalID: 3591306624634082850
+      spriteID: 40131f01058373e418b6bf90e5ea092f
+      internalID: -70940081
       vertices: []
       indices: 
       edges: []
@@ -209,20 +209,20 @@ TextureImporter:
       name: AngryBlob_4
       rect:
         serializedVersion: 2
-        x: 694
-        y: 15
-        width: 116
-        height: 133
+        x: 695
+        y: 16
+        width: 114
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 69175380c41dd7b20800000000000000
-      internalID: 3133891040205173142
+      spriteID: 75dd5b170d0abfd49a6034be902bae20
+      internalID: 2138415575
       vertices: []
       indices: 
       edges: []
@@ -231,20 +231,20 @@ TextureImporter:
       name: AngryBlob_5
       rect:
         serializedVersion: 2
-        x: 865
-        y: 16
-        width: 113
-        height: 147
+        x: 866
+        y: 17
+        width: 111
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 016f5ac2bbf584d60800000000000000
-      internalID: 7874649205969909264
+      spriteID: 74fdced9f140bc44ab7f8769ab304abd
+      internalID: -2084237428
       vertices: []
       indices: 
       edges: []
@@ -253,20 +253,20 @@ TextureImporter:
       name: AngryBlob_6
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 15
-        width: 115
-        height: 133
+        x: 1031
+        y: 16
+        width: 112
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9f7426d34b0e01c70800000000000000
-      internalID: 8939892325059020793
+      spriteID: 33c2513a5d381514c97889267432d193
+      internalID: 994033865
       vertices: []
       indices: 
       edges: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 487392e17c8329340bd383b72f5c37cd
     internalID: 0
     vertices: []
     indices: 
@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AngryBlob_0: 191290516
+      AngryBlob_1: -495129675
+      AngryBlob_2: 1591136701
+      AngryBlob_3: -70940081
+      AngryBlob_4: 2138415575
+      AngryBlob_5: -2084237428
+      AngryBlob_6: 994033865
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
