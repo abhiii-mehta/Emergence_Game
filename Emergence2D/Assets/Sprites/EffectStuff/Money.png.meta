@@ -109,10 +109,10 @@ TextureImporter:
       name: Money_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 64
-        width: 43
-        height: 27
+        x: 13
+        y: 132
+        width: 66
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: Money_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 30
-        width: 50
-        height: 28
+        x: 6
+        y: 85
+        width: 75
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Money_2
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1
-        width: 44
-        height: 26
+        x: 10
+        y: 42
+        width: 68
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,6 +167,28 @@ TextureImporter:
       bones: []
       spriteID: 43fa01d10ca3c2a80800000000000000
       internalID: -8490346600704463052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Money_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 79
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81914508200f1764f82893b156d941ef
+      internalID: 1601358780
       vertices: []
       indices: 
       edges: []
@@ -188,6 +210,7 @@ TextureImporter:
       Money_0: 5670732621190257608
       Money_1: 2429705866556353255
       Money_2: -8490346600704463052
+      Money_3: 1601358780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
