@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2078468417, guid: bf709de104043a6488293ba7da7b0ebd, type: 3}
+  m_Sprite: {fileID: -841326645, guid: 292c71b253743e6498fc6351a6810a5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,6 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEmotion: 2
+  happyController: {fileID: 9100000, guid: 85f74ae464fafa74b9e7b9ce5a513ff7, type: 2}
+  sadController: {fileID: 9100000, guid: 1b916cb5cdc5ae14a85bb1a0030fe6e9, type: 2}
+  angryController: {fileID: 9100000, guid: 208f546638082064ab170dd15fe2be40, type: 2}
+  loveController: {fileID: 9100000, guid: 3f699dcfeb0a79a4986f30b327ff69a9, type: 2}
+  neutralController: {fileID: 9100000, guid: 7570c6e9a1c4a1946b8a1f0cef8f18d5, type: 2}
   moveSpeed: 1
   neutralNPCPrefab: {fileID: 8897994490447382241, guid: f8898f6b0211700469082b209b6b1fd1, type: 3}
 --- !u!95 &9162729618829472144
@@ -179,7 +184,7 @@ Animator:
   m_GameObject: {fileID: 3899578340683823721}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e29d761107ac02e458c89e934e04f15e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1b916cb5cdc5ae14a85bb1a0030fe6e9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
