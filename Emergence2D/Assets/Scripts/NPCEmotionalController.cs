@@ -6,8 +6,8 @@ public class NPCEmotionController : MonoBehaviour
 
     public EmotionType currentEmotion = EmotionType.Neutral;
 
-    private SpriteRenderer rend;
     private Rigidbody2D rb;
+    private Animator animator;
 
     [Header("Movement")]
     public float moveSpeed = 1f;
@@ -24,10 +24,10 @@ public class NPCEmotionController : MonoBehaviour
 
     void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        SetColor();
+        animator = GetComponent<Animator>();
         PickNewDirection();
+        PlayEmotionAnimation();
     }
 
     void Update()
@@ -48,6 +48,30 @@ public class NPCEmotionController : MonoBehaviour
 
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 
+        Vector3 pos = transform.position;
+        bool bounced = false;
+
+        float minX = -8.5f, maxX = 8.5f;
+        float minY = -4.5f, maxY = 4.5f;
+
+        if (pos.x < minX || pos.x > maxX)
+        {
+            moveDirection.x *= -1;
+            bounced = true;
+        }
+        if (pos.y < minY || pos.y > maxY)
+        {
+            moveDirection.y *= -1;
+            bounced = true;
+        }
+
+        if (bounced)
+        {
+            pos.x = Mathf.Clamp(pos.x, minX, maxX);
+            pos.y = Mathf.Clamp(pos.y, minY, maxY);
+            transform.position = pos;
+        }
+
         if (currentEmotion == EmotionType.Love && birthTimer > 0f)
             birthTimer -= Time.deltaTime;
     }
@@ -57,25 +81,24 @@ public class NPCEmotionController : MonoBehaviour
         moveDirection = Random.insideUnitCircle.normalized;
     }
 
-    void SetColor()
-    {
-        Color c = currentEmotion switch
-        {
-            EmotionType.Happy => Color.yellow,
-            EmotionType.Sad => new Color(0.3f, 0.6f, 1f),
-            EmotionType.Angry => Color.red,
-            EmotionType.Love => Color.magenta,
-            EmotionType.Neutral => Color.gray,
-            _ => Color.white
-        };
-        if (rend != null)
-            rend.color = c;
-    }
-
     public void SetEmotion(EmotionType newEmotion)
     {
         currentEmotion = newEmotion;
-        SetColor();
+        PlayEmotionAnimation();
+    }
+
+    void PlayEmotionAnimation()
+    {
+        if (animator == null) return;
+
+        animator.ResetTrigger("ToHappy");
+        animator.ResetTrigger("ToSad");
+        animator.ResetTrigger("ToNeutral");
+        animator.ResetTrigger("ToAngry");
+        animator.ResetTrigger("ToLove");
+
+        string triggerName = "To" + currentEmotion.ToString();
+        animator.SetTrigger(triggerName);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -112,7 +135,11 @@ public class NPCEmotionController : MonoBehaviour
             if (birthTimer <= 0f && otherNPC.birthTimer <= 0f && neutralNPCPrefab != null)
             {
                 Vector2 offset = Random.insideUnitCircle.normalized * 0.5f;
-                Instantiate(neutralNPCPrefab, transform.position + (Vector3)offset, Quaternion.identity);
+                GameObject baby = Instantiate(neutralNPCPrefab, transform.position + (Vector3)offset, Quaternion.identity);
+                var babyController = baby.GetComponent<NPCEmotionController>();
+                if (babyController != null)
+                    babyController.SetEmotion(EmotionType.Neutral);
+
                 birthTimer = 5f;
                 otherNPC.birthTimer = 5f;
             }
