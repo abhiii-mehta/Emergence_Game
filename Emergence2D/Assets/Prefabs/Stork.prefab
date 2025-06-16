@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8049678216872752522}
   - component: {fileID: 4460782759695538953}
   - component: {fileID: 9017129428478211963}
+  - component: {fileID: 5649258952061965441}
   m_Layer: 0
   m_Name: Stork
   m_TagString: Untagged
@@ -110,3 +111,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5649258952061965441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7594341150150916589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89475a607d1780c4b823b98221501b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  babyPrefab: {fileID: 8897994490447382241, guid: f8898f6b0211700469082b209b6b1fd1, type: 3}
+  babyDropPosition: {x: 0, y: 0, z: 0}
+  speed: 5

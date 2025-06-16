@@ -7,6 +7,7 @@ public class NPCEmotionController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
+    [SerializeField] GameObject storkPrefab;
 
     [Header("Animator Controllers")]
     public RuntimeAnimatorController happyController;
@@ -80,6 +81,16 @@ public class NPCEmotionController : MonoBehaviour
 
     public void SetEmotion(EmotionType newEmotion)
     {
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+            if (animator == null)
+            {
+                Debug.LogWarning($"{name} is missing an Animator when trying to SetEmotion to {newEmotion}!");
+                return;
+            }
+        }
+
         if (currentEmotion == newEmotion) return;
 
         currentEmotion = newEmotion;
@@ -106,6 +117,7 @@ public class NPCEmotionController : MonoBehaviour
                 break;
         }
     }
+
     private IEnumerator FlashGrey()
     {
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
@@ -201,16 +213,50 @@ public class NPCEmotionController : MonoBehaviour
             if (birthTimer <= 0f && otherNPC.birthTimer <= 0f && neutralNPCPrefab != null)
             {
                 Vector2 offset = Random.insideUnitCircle.normalized * 0.5f;
-                GameObject baby = Instantiate(neutralNPCPrefab, transform.position + (Vector3)offset, Quaternion.identity);
-                var babyCtrl = baby.GetComponent<NPCEmotionController>();
-                if (babyCtrl != null)
-                {
-                    StartCoroutine(AssignNeutralWithDelay(babyCtrl));
-                }
+                Vector3 babyPosition = transform.position + (Vector3)offset;
+
+                SpawnBaby(babyPosition);
+
                 birthTimer = otherNPC.birthTimer = birthCooldown;
             }
         }
+
     }
+    void SpawnBaby(Vector3 babyPosition)
+    {
+        if (storkPrefab != null)
+        {
+            Vector3 storkStartPos = new Vector3(
+                Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).x - 2f,
+                babyPosition.y,
+                0
+            );
+
+            GameObject stork = Instantiate(storkPrefab, storkStartPos, Quaternion.identity);
+            StorkController storkCtrl = stork.GetComponent<StorkController>();
+
+            if (storkCtrl != null)
+            {
+                storkCtrl.babyPrefab = neutralNPCPrefab;
+                storkCtrl.babyDropPosition = babyPosition;
+            }
+        }
+        else
+        {
+            GameObject baby = Instantiate(neutralNPCPrefab, babyPosition, Quaternion.identity);
+            var babyCtrl = baby.GetComponent<NPCEmotionController>();
+            if (babyCtrl != null)
+            {
+                babyCtrl.SetEmotion(NPCEmotionController.EmotionType.Neutral);
+            }
+            else
+            {
+                Debug.LogWarning("Spawned baby does not have NPCEmotionController!");
+            }
+
+        }
+    }
+
     private IEnumerator AssignNeutralWithDelay(NPCEmotionController babyCtrl)
     {
         yield return new WaitForSeconds(0.2f);
