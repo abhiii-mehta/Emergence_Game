@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 292c71b253743e6498fc6351a6810a5a
+guid: 00b6cab6494bc774fa8543c9b93fceb2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1436444358551563571
-    second: SadBlob_0
+      213: 6278551531000726368
+    second: Stork_0
   - first:
-      213: 8072008196235465335
-    second: SadBlob_1
+      213: 3443608356364782771
+    second: Stork_1
   - first:
-      213: 4540148096495656881
-    second: SadBlob_2
+      213: 209255902746754625
+    second: Stork_2
   - first:
-      213: -4304178006540690667
-    second: SadBlob_3
+      213: -4750140875617443214
+    second: Stork_3
   - first:
-      213: -6839424173068987863
-    second: SadBlob_4
+      213: -3595961693615628480
+    second: Stork_4
   - first:
-      213: -7354116519090198153
-    second: SadBlob_5
+      213: 2398869836165891757
+    second: Stork_5
   - first:
-      213: 3852500600918308966
-    second: SadBlob_6
+      213: 3892400801413016433
+    second: Stork_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,13 +118,101 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SadBlob_0
+      name: Stork_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 196
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5829be8ba4c6a646a4209d1963e2b44
+      internalID: -2056127757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stork_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 222
+        width: 196
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23cbcacae836d74fa476f0b82c7f141
+      internalID: -850325227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stork_2
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 222
+        width: 196
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f793f6806221c30479837c6cad26915d
+      internalID: 780964564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stork_3
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 222
+        width: 196
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375ce6311c5937c4295a76b0e78cc60c
+      internalID: 1774854626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stork_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 168
-        height: 168
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de294fa9468c0e041bd0685b31cf1a8e
-      internalID: -841326645
+      spriteID: 24ab44f26d871e24a89a872d3a4c83dd
+      internalID: 350305341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SadBlob_1
+      name: Stork_5
       rect:
         serializedVersion: 2
-        x: 168
+        x: 196
         y: 0
-        width: 168
-        height: 168
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 938b69db756507b4eafac58f99c7ce4d
-      internalID: -179763379
+      spriteID: 7ab38e6408457d14db14b9cc10206bb3
+      internalID: -1343489253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SadBlob_2
+      name: Stork_6
       rect:
         serializedVersion: 2
-        x: 336
+        x: 392
         y: 0
-        width: 168
-        height: 168
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,96 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cccdec4e80325f4381dbdfd16ec5ae7
-      internalID: -1713271302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SadBlob_3
-      rect:
-        serializedVersion: 2
-        x: 504
-        y: 0
-        width: 168
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebc91460fe38920418673db4e7261e89
-      internalID: 2107215194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SadBlob_4
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 0
-        width: 168
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2187892189a5364082e810e327cd55d
-      internalID: 832469048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SadBlob_5
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 0
-        width: 168
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69c22480091901546951b1f393ab84ef
-      internalID: -1420832103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SadBlob_6
-      rect:
-        serializedVersion: 2
-        x: 1008
-        y: 0
-        width: 168
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2108f8962cd2b9449a3b2a9332d4dd7
-      internalID: 1990248679
+      spriteID: 628ebcb92f2030f45ab4e5f2d4427472
+      internalID: 604976120
       vertices: []
       indices: 
       edges: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0cf529c15ea69664fb76fed909c6cdb1
+    spriteID: 92f272dde29fe244e881d72ecebed4e0
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SadBlob_0: -841326645
-      SadBlob_1: -179763379
-      SadBlob_2: -1713271302
-      SadBlob_3: 2107215194
-      SadBlob_4: 832469048
-      SadBlob_5: -1420832103
-      SadBlob_6: 1990248679
+      Stork_0: -2056127757
+      Stork_1: -850325227
+      Stork_2: 780964564
+      Stork_3: 1774854626
+      Stork_4: 350305341
+      Stork_5: -1343489253
+      Stork_6: 604976120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
