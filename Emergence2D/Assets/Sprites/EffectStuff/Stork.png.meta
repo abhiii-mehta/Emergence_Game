@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 09a73f3397fe1de4890d1214d41be561
+guid: 00b6cab6494bc774fa8543c9b93fceb2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2238912969435238953
-    second: LoveBlob_0
+      213: 6278551531000726368
+    second: Stork_0
   - first:
-      213: 407132281728343992
-    second: LoveBlob_1
+      213: 3443608356364782771
+    second: Stork_1
   - first:
-      213: 7318381931502066497
-    second: LoveBlob_2
+      213: 209255902746754625
+    second: Stork_2
   - first:
-      213: -2778297750309689932
-    second: LoveBlob_3
+      213: -4750140875617443214
+    second: Stork_3
   - first:
-      213: -3875446761434082744
-    second: LoveBlob_4
+      213: -3595961693615628480
+    second: Stork_4
   - first:
-      213: 8700203600568512711
-    second: LoveBlob_5
+      213: 2398869836165891757
+    second: Stork_5
   - first:
-      213: -1502261214652730595
-    second: LoveBlob_6
+      213: 3892400801413016433
+    second: Stork_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoveBlob_0
+      name: Stork_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 16
-        width: 123
-        height: 124
+        x: 0
+        y: 222
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69c159c88a5e10545888831a578ef757
-      internalID: -787924214
+      spriteID: b5829be8ba4c6a646a4209d1963e2b44
+      internalID: -2056127757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoveBlob_1
+      name: Stork_1
       rect:
         serializedVersion: 2
-        x: 185
-        y: 12
-        width: 131
-        height: 119
+        x: 196
+        y: 222
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d1f5762890eec94ab0bb0c9c4d49280
-      internalID: -1943943611
+      spriteID: c23cbcacae836d74fa476f0b82c7f141
+      internalID: -850325227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoveBlob_2
+      name: Stork_2
       rect:
         serializedVersion: 2
-        x: 353
-        y: 14
-        width: 141
-        height: 109
+        x: 392
+        y: 222
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a43331b614bbfa64db7dc1e559911194
-      internalID: -1469279929
+      spriteID: f793f6806221c30479837c6cad26915d
+      internalID: 780964564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoveBlob_3
+      name: Stork_3
       rect:
         serializedVersion: 2
-        x: 524
-        y: 16
-        width: 123
-        height: 124
+        x: 588
+        y: 222
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f94231026dc752849834fc2890bfa2f9
-      internalID: -1786228767
+      spriteID: 375ce6311c5937c4295a76b0e78cc60c
+      internalID: 1774854626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoveBlob_4
+      name: Stork_4
       rect:
         serializedVersion: 2
-        x: 695
-        y: 16
-        width: 114
-        height: 131
+        x: 0
+        y: 0
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfc8174a2df63c44e96dbfc435fd4ede
-      internalID: 1948706296
+      spriteID: 24ab44f26d871e24a89a872d3a4c83dd
+      internalID: 350305341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoveBlob_5
+      name: Stork_5
       rect:
         serializedVersion: 2
-        x: 866
-        y: 17
-        width: 111
-        height: 145
+        x: 196
+        y: 0
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2527159bf2b51847a010273d777321d
-      internalID: -736991820
+      spriteID: 7ab38e6408457d14db14b9cc10206bb3
+      internalID: -1343489253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LoveBlob_6
+      name: Stork_6
       rect:
         serializedVersion: 2
-        x: 1031
-        y: 16
-        width: 112
-        height: 131
+        x: 392
+        y: 0
+        width: 196
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,8 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48a8cc3d06266ec48a06336a49b3bf5f
-      internalID: 1314488552
+      spriteID: 628ebcb92f2030f45ab4e5f2d4427472
+      internalID: 604976120
       vertices: []
       indices: 
       edges: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 78dda9cf65946694cbedb83f747021aa
+    spriteID: 92f272dde29fe244e881d72ecebed4e0
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LoveBlob_0: -787924214
-      LoveBlob_1: -1943943611
-      LoveBlob_2: -1469279929
-      LoveBlob_3: -1786228767
-      LoveBlob_4: 1948706296
-      LoveBlob_5: -736991820
-      LoveBlob_6: 1314488552
+      Stork_0: -2056127757
+      Stork_1: -850325227
+      Stork_2: 780964564
+      Stork_3: 1774854626
+      Stork_4: 350305341
+      Stork_5: -1343489253
+      Stork_6: 604976120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

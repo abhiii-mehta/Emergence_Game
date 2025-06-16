@@ -1,28 +1,19 @@
 fileFormatVersion: 2
-guid: bf709de104043a6488293ba7da7b0ebd
+guid: 794415afc9cc976428a911441a34bedd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2694185951538676707
-    second: NeutralBlob_0
+      213: 3079012121921341374
+    second: Condoms_0
   - first:
-      213: -6064460458693938077
-    second: NeutralBlob_1
+      213: -5327937057724920121
+    second: Condoms_1
   - first:
-      213: 3347803916405771776
-    second: NeutralBlob_2
+      213: 6424103510032353004
+    second: Condoms_2
   - first:
-      213: -7185914281006024563
-    second: NeutralBlob_3
-  - first:
-      213: 4489469971291432182
-    second: NeutralBlob_4
-  - first:
-      213: 257599680543398323
-    second: NeutralBlob_5
-  - first:
-      213: -4502712837434602980
-    second: NeutralBlob_6
+      213: 1588055531365479602
+    second: Condoms_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,155 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NeutralBlob_0
+      name: Condoms_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 16
-        width: 123
-        height: 124
+        x: 1
+        y: 44
+        width: 65
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c67c2ff316263f44e8a3f1c5acfda4bd
-      internalID: 2078468417
+      spriteID: eb74e3a2639daba20800000000000000
+      internalID: 3079012121921341374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeutralBlob_1
+      name: Condoms_1
       rect:
         serializedVersion: 2
-        x: 185
-        y: 12
-        width: 131
-        height: 119
+        x: 138
+        y: 1
+        width: 49
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1936a63d3c6b0e24d915738fe413b4fa
-      internalID: -372749679
+      spriteID: 7ce8aa0897d5f06b0800000000000000
+      internalID: -5327937057724920121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeutralBlob_2
+      name: Condoms_2
       rect:
         serializedVersion: 2
-        x: 353
-        y: 14
-        width: 141
-        height: 109
+        x: 1
+        y: 2
+        width: 59
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b5d22348cc93fee4c83d87b63c3cf348
-      internalID: -664287940
+      spriteID: ce681d32b10072950800000000000000
+      internalID: 6424103510032353004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeutralBlob_3
+      name: Condoms_3
       rect:
         serializedVersion: 2
-        x: 524
-        y: 16
-        width: 123
-        height: 124
+        x: 69
+        y: 1
+        width: 61
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a4e3b8b7e7c545247b62dac830e8cf92
-      internalID: -885401988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeutralBlob_4
-      rect:
-        serializedVersion: 2
-        x: 695
-        y: 16
-        width: 114
-        height: 131
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6cd29e2e88d552043bdc37f9ae5c2644
-      internalID: -1054278861
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeutralBlob_5
-      rect:
-        serializedVersion: 2
-        x: 866
-        y: 17
-        width: 111
-        height: 145
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4c166a1e2e4f9d4f983b5dc2e8fcd18
-      internalID: 1841052851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeutralBlob_6
-      rect:
-        serializedVersion: 2
-        x: 1031
-        y: 16
-        width: 112
-        height: 131
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edb17175ddca4e846b0c1f04ed756537
-      internalID: -1313375349
+      spriteID: 2b432a68718e90610800000000000000
+      internalID: 1588055531365479602
       vertices: []
       indices: 
       edges: []
@@ -275,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1c0bfaa8bad47a14c9365f7a9012d3f2
+    spriteID: 5a0696e2bfa291d4887ee47aa98b71b2
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NeutralBlob_0: 2078468417
-      NeutralBlob_1: -372749679
-      NeutralBlob_2: -664287940
-      NeutralBlob_3: -885401988
-      NeutralBlob_4: -1054278861
-      NeutralBlob_5: 1841052851
-      NeutralBlob_6: -1313375349
+      Condoms_0: 3079012121921341374
+      Condoms_1: -5327937057724920121
+      Condoms_2: 6424103510032353004
+      Condoms_3: 1588055531365479602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
