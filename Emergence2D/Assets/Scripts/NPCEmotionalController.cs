@@ -202,14 +202,20 @@ public class NPCEmotionController : MonoBehaviour
             {
                 Vector2 offset = Random.insideUnitCircle.normalized * 0.5f;
                 GameObject baby = Instantiate(neutralNPCPrefab, transform.position + (Vector3)offset, Quaternion.identity);
-
                 var babyCtrl = baby.GetComponent<NPCEmotionController>();
                 if (babyCtrl != null)
                 {
-                    babyCtrl.SetEmotion(EmotionType.Neutral);
+                    StartCoroutine(AssignNeutralWithDelay(babyCtrl));
                 }
                 birthTimer = otherNPC.birthTimer = birthCooldown;
             }
         }
     }
+    private IEnumerator AssignNeutralWithDelay(NPCEmotionController babyCtrl)
+    {
+        yield return new WaitForSeconds(0.2f);
+        babyCtrl.SetEmotion(EmotionType.Neutral);
+        Debug.Log($"{babyCtrl.name} initialized as Neutral.");
+    }
+
 }
