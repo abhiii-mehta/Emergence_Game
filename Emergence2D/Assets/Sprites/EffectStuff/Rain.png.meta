@@ -121,10 +121,10 @@ TextureImporter:
       name: Rain_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 29
-        width: 14
-        height: 29
+        x: 2
+        y: 3
+        width: 29
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,10 +143,10 @@ TextureImporter:
       name: Rain_1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 29
-        width: 12
-        height: 24
+        x: 40
+        y: 3
+        width: 25
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: Rain_2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 29
-        width: 11
-        height: 25
+        x: 72
+        y: 2
+        width: 23
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,10 +187,10 @@ TextureImporter:
       name: Rain_3
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 10
-        height: 24
+        x: 102
+        y: 2
+        width: 21
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,10 +209,10 @@ TextureImporter:
       name: Rain_4
       rect:
         serializedVersion: 2
-        x: 15
-        y: 1
-        width: 10
-        height: 20
+        x: 129
+        y: 3
+        width: 24
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,50 +223,6 @@ TextureImporter:
       bones: []
       spriteID: c5980091c4014b450800000000000000
       internalID: 6103521314016889180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rain_5
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 1
-        width: 9
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c01596ac9ce680650800000000000000
-      internalID: 6199326700038869260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rain_6
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 1
-        width: 8
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8cfe2e911622a43a0800000000000000
-      internalID: -6680489296809234488
       vertices: []
       indices: 
       edges: []
@@ -290,8 +246,6 @@ TextureImporter:
       Rain_2: -8140093697600284203
       Rain_3: 3633252413776573961
       Rain_4: 6103521314016889180
-      Rain_5: 6199326700038869260
-      Rain_6: -6680489296809234488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
