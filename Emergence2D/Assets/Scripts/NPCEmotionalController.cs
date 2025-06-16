@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 public class NPCEmotionController : MonoBehaviour
 {
     public enum EmotionType { Neutral, Happy, Sad, Angry, Love }
@@ -84,6 +84,7 @@ public class NPCEmotionController : MonoBehaviour
 
         currentEmotion = newEmotion;
         emotionCooldownTimer = 0.3f;
+        StartCoroutine(FlashGrey());
 
         switch (currentEmotion)
         {
@@ -103,6 +104,20 @@ public class NPCEmotionController : MonoBehaviour
             default:
                 animator.runtimeAnimatorController = neutralController;
                 break;
+        }
+    }
+    private IEnumerator FlashGrey()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.color = Color.grey;
+            yield return new WaitForSeconds(0.3f);
+            sr.color = Color.white;
+        }
+        else
+        {
+            Debug.LogWarning($"{name} has no SpriteRenderer when flashing grey.");
         }
     }
 
