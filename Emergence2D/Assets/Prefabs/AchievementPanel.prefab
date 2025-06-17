@@ -94,7 +94,7 @@ MonoBehaviour:
   titleText: {fileID: 3928647378061662736}
   descriptionText: {fileID: 6214690403980554729}
   duration: 2.5
-  slideDistance: 50
+  slideDistance: 40
 --- !u!1 &4214076156376562056
 GameObject:
   m_ObjectHideFlags: 0
