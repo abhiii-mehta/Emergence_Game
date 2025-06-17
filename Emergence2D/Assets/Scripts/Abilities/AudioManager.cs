@@ -12,6 +12,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip bgmClip;
     private AudioSource bgmSource;
 
+    [Header("Volume Settings")]
+    [Range(0f, 1f)] public float bgmVolume = 0.5f;
+    [Range(0f, 1f)] public float sfxVolume = 1f;
+    [Range(0f, 1f)] public float loopSfxVolume = 1f;
+
     private AudioSource sfxSource;
     private AudioSource loopSource;
 
@@ -24,17 +29,14 @@ public class AudioManager : MonoBehaviour
 
 
     private Dictionary<string, AudioClip> sfxMap;
-
     void Awake()
     {
-        bgmSource = gameObject.AddComponent<AudioSource>();
-        bgmSource.clip = bgmClip;
-        bgmSource.loop = true;
-        bgmSource.playOnAwake = false;
-        bgmSource.volume = 0.5f;
-
         if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         sfxSource = gameObject.AddComponent<AudioSource>();
         sfxSource.playOnAwake = false;
@@ -43,20 +45,29 @@ public class AudioManager : MonoBehaviour
         loopSource.loop = true;
         loopSource.playOnAwake = false;
 
-        sfxMap = new Dictionary<string, AudioClip>
-        {
-            { "angry_vs_angry", angryVsAngryClip },
-            { "sad_vs_sad", sadVsSadClip },
-            { "happy_vs_happy", happyVsHappyClip },
-            { "love_vs_love", loveVsLoveClip },
-            { "sad_love_cry", sadLoveCryClip },
-            { "too_many_npcs", tooManyNPCsClip },
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        bgmSource.clip = bgmClip;
+        bgmSource.loop = true;
+        bgmSource.playOnAwake = false;
 
-        };
+        bgmSource.volume = bgmVolume;
+        sfxSource.volume = sfxVolume;
+        loopSource.volume = loopSfxVolume;
+
+        sfxMap = new Dictionary<string, AudioClip>
+    {
+        { "angry_vs_angry", angryVsAngryClip },
+        { "sad_vs_sad", sadVsSadClip },
+        { "happy_vs_happy", happyVsHappyClip },
+        { "love_vs_love", loveVsLoveClip },
+        { "sad_love_cry", sadLoveCryClip },
+        { "too_many_npcs", tooManyNPCsClip },
+    };
+
         if (!bgmSource.isPlaying)
             bgmSource.Play();
-        DontDestroyOnLoad(gameObject);
 
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySFX(string id)
