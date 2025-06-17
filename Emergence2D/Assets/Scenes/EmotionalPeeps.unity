@@ -2025,6 +2025,7 @@ MonoBehaviour:
   angryClip: {fileID: 8300000, guid: 6436667d3d89abb44b2c38e00f2bd3e1, type: 3}
   condomClip: {fileID: 8300000, guid: 1edd07f33d80d51499b6deb9014de8dc, type: 3}
   spawnClip: {fileID: 8300000, guid: 8ef87385f0ffa1246a2613f9264e61c7, type: 3}
+  bgmClip: {fileID: 8300000, guid: 611ccded522663242853c9808dd5ec8e, type: 3}
   angryVsAngryClip: {fileID: 8300000, guid: b64be485957c0fe419734368e94e1f20, type: 3}
   sadVsSadClip: {fileID: 8300000, guid: dd1c2708fe653374d8fa228368d4ac0a, type: 3}
   happyVsHappyClip: {fileID: 8300000, guid: a4d8138ab31d7864ea1691aa3538163b, type: 3}

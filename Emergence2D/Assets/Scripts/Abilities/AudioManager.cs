@@ -8,6 +8,10 @@ public class AudioManager : MonoBehaviour
     [Header("Clips")]
     public AudioClip nukeClip, moneyClip, rainClip, angryClip, condomClip, spawnClip;
 
+    [Header("Music")]
+    [SerializeField] private AudioClip bgmClip;
+    private AudioSource bgmSource;
+
     private AudioSource sfxSource;
     private AudioSource loopSource;
 
@@ -22,6 +26,12 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        bgmSource.clip = bgmClip;
+        bgmSource.loop = true;
+        bgmSource.playOnAwake = false;
+        bgmSource.volume = 0.5f;
+
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
@@ -40,6 +50,10 @@ public class AudioManager : MonoBehaviour
             { "love_vs_love", loveVsLoveClip },
             { "sad_love_cry", sadLoveCryClip },
         };
+        if (!bgmSource.isPlaying)
+            bgmSource.Play();
+        DontDestroyOnLoad(gameObject);
+
     }
 
     public void PlaySFX(string id)
