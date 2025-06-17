@@ -6,11 +6,41 @@ public class AbilityEffect : MonoBehaviour
     public AbilityManager.AbilityType abilityType;
     public float radius = 1f;
     public float duration = 1.5f;
-
+    private AudioSource sfxSource;
     void Start()
     {
         Destroy(gameObject, duration);
         ApplyEffect();
+        switch (abilityType)
+        {
+            case AbilityManager.AbilityType.Nuke:
+                AudioManager.Instance.PlaySFX("nuke");
+                break;
+            case AbilityManager.AbilityType.Money:
+                AudioManager.Instance.PlayLoopingSFX("money");
+                break;
+            case AbilityManager.AbilityType.Rain:
+                AudioManager.Instance.PlayLoopingSFX("rain");
+                break;
+            case AbilityManager.AbilityType.Stink:
+                AudioManager.Instance.PlaySFX("angry");
+                break;
+
+            case AbilityManager.AbilityType.Condom:
+                AudioManager.Instance.PlaySFX("condom");
+                break;
+        }
+    }
+    void OnDestroy()
+    {
+        if (abilityType == AbilityManager.AbilityType.Money || abilityType == AbilityManager.AbilityType.Rain)
+        {
+            AudioManager.Instance.StopLoopingSFX();
+        }
+    }
+    void StopEffectSound()
+    {
+        AudioManager.Instance.StopLoopingSFX();
     }
     void ApplyEffect()
     {
