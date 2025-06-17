@@ -8,6 +8,7 @@ public class NPCEmotionController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     [SerializeField] GameObject storkPrefab;
+    [SerializeField] public GameObject deathEffectPrefab;
 
     [Header("Animator Controllers")]
     public RuntimeAnimatorController happyController;
@@ -190,6 +191,7 @@ public class NPCEmotionController : MonoBehaviour
 
         if (a == EmotionType.Sad && b == EmotionType.Sad)
         {
+            SpawnDeathEffect();
             Destroy(gameObject);
             Destroy(otherNPC.gameObject);
             return;
@@ -209,8 +211,16 @@ public class NPCEmotionController : MonoBehaviour
 
         if (a == EmotionType.Angry && b == EmotionType.Angry)
         {
-            if (Random.value > 0.5f) Destroy(gameObject);
-            else Destroy(otherNPC.gameObject);
+            if (Random.value > 0.5f)
+            {
+                SpawnDeathEffect();
+                Destroy(gameObject);
+            }
+            else
+            {
+                otherNPC.SpawnDeathEffect();
+                Destroy(otherNPC.gameObject);
+            }
             return;
         }
 
@@ -306,6 +316,13 @@ public class NPCEmotionController : MonoBehaviour
 
         if (loveCount >= 10)
             AchievementManager.Instance.Unlock("orgy", "10 Love NPCs", "Love is in the air... a bit too much.");
+    }
+    public void SpawnDeathEffect()
+    {
+        if (deathEffectPrefab != null)
+        {
+            Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        }
     }
 
 }

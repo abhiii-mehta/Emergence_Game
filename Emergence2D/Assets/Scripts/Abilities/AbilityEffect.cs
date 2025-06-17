@@ -29,7 +29,15 @@ public class AbilityEffect : MonoBehaviour
             switch (abilityType)
             {
                 case AbilityManager.AbilityType.Nuke:
-                    Destroy(npc.gameObject);
+                    if (npc != null)
+                    {
+                        var npcCtrl = npc.GetComponent<NPCEmotionController>();
+                        if (npcCtrl != null)
+                            npcCtrl.SpawnDeathEffect();
+
+                        Destroy(npc.gameObject);
+                    }
+
                     triggeredAchievement = true;
                     break;
                 case AbilityManager.AbilityType.Money:
