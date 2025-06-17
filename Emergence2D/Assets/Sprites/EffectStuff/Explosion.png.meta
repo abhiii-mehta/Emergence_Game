@@ -296,11 +296,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 300
+        y: 600
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -318,11 +318,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 300
-        y: 300
+        y: 600
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -340,11 +340,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 600
-        y: 300
+        y: 600
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -361,12 +361,12 @@ TextureImporter:
       name: Explosion_3
       rect:
         serializedVersion: 2
-        x: 900
+        x: 0
         y: 300
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -383,12 +383,12 @@ TextureImporter:
       name: Explosion_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 300
+        y: 300
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -405,12 +405,12 @@ TextureImporter:
       name: Explosion_5
       rect:
         serializedVersion: 2
-        x: 300
-        y: 0
+        x: 600
+        y: 300
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -427,12 +427,12 @@ TextureImporter:
       name: Explosion_6
       rect:
         serializedVersion: 2
-        x: 600
+        x: 0
         y: 0
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -449,7 +449,29 @@ TextureImporter:
       name: Explosion_7
       rect:
         serializedVersion: 2
-        x: 900
+        x: 300
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d227875db7695c30800000000000000
+      internalID: 4348620978117878488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 600
         y: 0
         width: 300
         height: 300
@@ -459,10 +481,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8d227875db7695c30800000000000000
-      internalID: 4348620978117878488
+      spriteID: e46c9ade114c36d4dab39ad03f30edec
+      internalID: 677848173
       vertices: []
       indices: 
       edges: []
@@ -489,6 +511,7 @@ TextureImporter:
       Explosion_5: -2330519403281856691
       Explosion_6: -4796932125324312052
       Explosion_7: 4348620978117878488
+      Explosion_8: 677848173
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
