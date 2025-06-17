@@ -2031,6 +2031,7 @@ MonoBehaviour:
   happyVsHappyClip: {fileID: 8300000, guid: a4d8138ab31d7864ea1691aa3538163b, type: 3}
   loveVsLoveClip: {fileID: 8300000, guid: fcaae5daaec0b4745959f8957d88a2ea, type: 3}
   sadLoveCryClip: {fileID: 8300000, guid: 25031e0c01458fe4bbd9de8af1cb852c, type: 3}
+  tooManyNPCsClip: {fileID: 8300000, guid: 7a5462f59d93d99489367843de6922a0, type: 3}
 --- !u!4 &1107683535
 Transform:
   m_ObjectHideFlags: 0

@@ -37,6 +37,7 @@ public class NPCEmotionController : MonoBehaviour
     private static int totalCryEvents = 0;
     private static int totalBabiesSpawned = 0;
 
+    private static bool overloadSFXPlayed = false;
 
     void Start()
     {
@@ -296,8 +297,8 @@ public class NPCEmotionController : MonoBehaviour
             if (totalBabiesSpawned == 5)
                 AchievementManager.Instance.Unlock("rabbits", "The Rabbits", "Spawn at least 5 NPCs via childbirth");
         }
-
         CheckForAchievementTriggers();
+        CheckNPCOverload();
     }
 
     private IEnumerator AssignNeutralWithDelay(NPCEmotionController babyCtrl)
@@ -341,6 +342,18 @@ public class NPCEmotionController : MonoBehaviour
         if (happyMeetEffect != null)
         {
             Instantiate(happyMeetEffect, transform.position, Quaternion.identity);
+        }
+    }
+    void CheckNPCOverload()
+    {
+        if (overloadSFXPlayed) return;
+
+        int npcCount = GameObject.FindObjectsOfType<NPCEmotionController>().Length;
+
+        if (npcCount > 50)
+        {
+            AudioManager.Instance.PlaySFX("too_many_npcs");
+            overloadSFXPlayed = true;
         }
     }
 

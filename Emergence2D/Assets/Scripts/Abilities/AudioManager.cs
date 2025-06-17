@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip happyVsHappyClip;
     [SerializeField] private AudioClip loveVsLoveClip;
     [SerializeField] private AudioClip sadLoveCryClip;
+    [SerializeField] private AudioClip tooManyNPCsClip;
 
 
     private Dictionary<string, AudioClip> sfxMap;
@@ -49,6 +50,8 @@ public class AudioManager : MonoBehaviour
             { "happy_vs_happy", happyVsHappyClip },
             { "love_vs_love", loveVsLoveClip },
             { "sad_love_cry", sadLoveCryClip },
+            { "too_many_npcs", tooManyNPCsClip },
+
         };
         if (!bgmSource.isPlaying)
             bgmSource.Play();
