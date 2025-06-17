@@ -31,6 +31,9 @@ public class NPCEmotionController : MonoBehaviour
     private float birthTimer = 0f;
 
     private float emotionCooldownTimer = 0f;
+    private static int totalCryEvents = 0;
+    private static int totalBabiesSpawned = 0;
+
 
     void Start()
     {
@@ -116,6 +119,14 @@ public class NPCEmotionController : MonoBehaviour
                 animator.runtimeAnimatorController = neutralController;
                 break;
         }
+        if (newEmotion == EmotionType.Sad)
+        {
+            totalCryEvents++;
+            if (totalCryEvents >= 5)
+                AchievementManager.Instance.Unlock("depression", "Depression", "5 crying sessions.");
+        }
+
+        CheckForAchievementTriggers();
     }
 
     private IEnumerator FlashGrey()
@@ -220,6 +231,7 @@ public class NPCEmotionController : MonoBehaviour
                 birthTimer = otherNPC.birthTimer = birthCooldown;
             }
         }
+        CheckForAchievementTriggers();
 
     }
     void SpawnBaby(Vector3 babyPosition)
@@ -239,6 +251,10 @@ public class NPCEmotionController : MonoBehaviour
             {
                 storkCtrl.babyPrefab = neutralNPCPrefab;
                 storkCtrl.babyDropPosition = babyPosition;
+
+                totalBabiesSpawned++;
+                if (totalBabiesSpawned == 5)
+                    AchievementManager.Instance.Unlock("rabbits", "The Rabbits", "Spawn at least 5 NPCs via childbirth");
             }
         }
         else
@@ -254,7 +270,12 @@ public class NPCEmotionController : MonoBehaviour
                 Debug.LogWarning("Spawned baby does not have NPCEmotionController!");
             }
 
+            totalBabiesSpawned++;
+            if (totalBabiesSpawned == 5)
+                AchievementManager.Instance.Unlock("rabbits", "The Rabbits", "Spawn at least 5 NPCs via childbirth");
         }
+
+        CheckForAchievementTriggers();
     }
 
     private IEnumerator AssignNeutralWithDelay(NPCEmotionController babyCtrl)
@@ -262,6 +283,29 @@ public class NPCEmotionController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         babyCtrl.SetEmotion(EmotionType.Neutral);
         Debug.Log($"{babyCtrl.name} initialized as Neutral.");
+    }
+    void CheckForAchievementTriggers()
+    {
+        var all = FindObjectsOfType<NPCEmotionController>();
+
+        if (all.Length >= 20)
+            AchievementManager.Instance.Unlock("overcrowding", "Overcrowding", "Can of sardines");
+
+        if (all.Length == 1)
+        {
+            var npc = all[0];
+            if (npc.currentEmotion == EmotionType.Happy)
+                AchievementManager.Instance.Unlock("power_of_friendship", "The Power of Friendship", "One happy left");
+        }
+
+        int loveCount = 0;
+        foreach (var npc in all)
+        {
+            if (npc.currentEmotion == EmotionType.Love) loveCount++;
+        }
+
+        if (loveCount >= 10)
+            AchievementManager.Instance.Unlock("orgy", "10 Love NPCs", "Love is in the air... a bit too much.");
     }
 
 }
