@@ -169,6 +169,7 @@ MonoBehaviour:
   currentEmotion: 1
   storkPrefab: {fileID: 7594341150150916589, guid: 8433d00b29ae951439cc8a9d3d4270ff, type: 3}
   deathEffectPrefab: {fileID: 4996578834223049316, guid: 4266260a8a893e346b9b470611812d0a, type: 3}
+  happyMeetEffect: {fileID: 4996578834223049316, guid: 713813ad828451640a2be20e4bcfbddc, type: 3}
   happyController: {fileID: 9100000, guid: 85f74ae464fafa74b9e7b9ce5a513ff7, type: 2}
   sadController: {fileID: 9100000, guid: 1b916cb5cdc5ae14a85bb1a0030fe6e9, type: 2}
   angryController: {fileID: 9100000, guid: 208f546638082064ab170dd15fe2be40, type: 2}

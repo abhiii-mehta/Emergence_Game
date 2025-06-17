@@ -9,6 +9,8 @@ public class NPCEmotionController : MonoBehaviour
     private Animator animator;
     [SerializeField] GameObject storkPrefab;
     [SerializeField] public GameObject deathEffectPrefab;
+    [SerializeField] private GameObject happyMeetEffect;
+
 
     [Header("Animator Controllers")]
     public RuntimeAnimatorController happyController;
@@ -162,7 +164,10 @@ public class NPCEmotionController : MonoBehaviour
             otherNPC.SetEmotion(a);
 
         if (a == EmotionType.Happy && b == EmotionType.Happy)
+        {
+            PlayHappyEffect();
             return;
+        }
 
         if ((a == EmotionType.Happy && b == EmotionType.Sad) || (a == EmotionType.Sad && b == EmotionType.Happy))
         {
@@ -324,5 +329,13 @@ public class NPCEmotionController : MonoBehaviour
             Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
         }
     }
+    void PlayHappyEffect()
+    {
+        if (happyMeetEffect != null)
+        {
+            Instantiate(happyMeetEffect, transform.position, Quaternion.identity);
+        }
+    }
+
 
 }
