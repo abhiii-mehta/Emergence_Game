@@ -212,6 +212,7 @@ public class NPCEmotionController : MonoBehaviour
 
         if ((a == EmotionType.Sad && b == EmotionType.Love) || (a == EmotionType.Love && b == EmotionType.Sad))
         {
+            AudioManager.Instance.PlaySFXTemporary("sad_love_cry", 2f);
             isFrozen = otherNPC.isFrozen = true;
             freezeTimer = otherNPC.freezeTimer = 2f;
             return;

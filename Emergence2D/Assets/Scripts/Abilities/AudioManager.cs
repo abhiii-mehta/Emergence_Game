@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip sadVsSadClip;
     [SerializeField] private AudioClip happyVsHappyClip;
     [SerializeField] private AudioClip loveVsLoveClip;
+    [SerializeField] private AudioClip sadLoveCryClip;
+
 
     private Dictionary<string, AudioClip> sfxMap;
 
@@ -36,6 +38,7 @@ public class AudioManager : MonoBehaviour
             { "sad_vs_sad", sadVsSadClip },
             { "happy_vs_happy", happyVsHappyClip },
             { "love_vs_love", loveVsLoveClip },
+            { "sad_love_cry", sadLoveCryClip },
         };
     }
 
