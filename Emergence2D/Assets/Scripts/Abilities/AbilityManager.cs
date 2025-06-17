@@ -23,14 +23,22 @@ public class AbilityManager : MonoBehaviour
         {
             Vector2 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             SpawnAOE(worldPos, selectedAbility);
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
             selectedAbility = AbilityType.None;
+            Debug.Log("Ability deselected.");
         }
     }
 
     void SpawnAOE(Vector2 pos, AbilityType type)
     {
         GameObject prefab = GetAOEPrefab(type);
-        if (prefab != null) Instantiate(prefab, pos, Quaternion.identity);
+        if (prefab != null)
+        {
+            Instantiate(prefab, pos, Quaternion.identity);
+        }
     }
 
     GameObject GetAOEPrefab(AbilityType type)
