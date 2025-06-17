@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2056127757, guid: 00b6cab6494bc774fa8543c9b93fceb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,5 +124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   babyPrefab: {fileID: 8897994490447382241, guid: f8898f6b0211700469082b209b6b1fd1, type: 3}
-  babyDropPosition: {x: 0, y: 0, z: 0}
   speed: 5
+  babyDropPosition: {x: 0, y: 0, z: 0}
