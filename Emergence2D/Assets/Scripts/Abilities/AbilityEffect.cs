@@ -31,6 +31,7 @@ public class AbilityEffect : MonoBehaviour
                 case AbilityManager.AbilityType.Nuke:
                     if (npc != null)
                     {
+                        if (npc.CompareTag("Stork")) break;
                         var npcCtrl = npc.GetComponent<NPCEmotionController>();
                         if (npcCtrl != null)
                             npcCtrl.SpawnDeathEffect();
