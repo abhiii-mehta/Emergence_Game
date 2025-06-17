@@ -71,7 +71,7 @@ public class NPCEmotionController : MonoBehaviour
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 
         Vector3 pos = transform.position;
-        float minX = -8.5f, maxX = 8.5f, minY = -4.5f, maxY = 4.5f;
+        float minX = -6.5f, maxX = 8.5f, minY = -4.5f, maxY = 4.5f;
         if (pos.x < minX || pos.x > maxX) moveDirection.x *= -1;
         if (pos.y < minY || pos.y > maxY) moveDirection.y *= -1;
         transform.position = new Vector3(Mathf.Clamp(pos.x, minX, maxX), Mathf.Clamp(pos.y, minY, maxY), pos.z);
@@ -165,7 +165,9 @@ public class NPCEmotionController : MonoBehaviour
 
         if (a == EmotionType.Happy && b == EmotionType.Happy)
         {
+            Debug.Log("Playing happy_vs_happy SFX");
             PlayHappyEffect();
+            AudioManager.Instance.PlaySFXTemporary("happy_vs_happy",2f);
             return;
         }
 
@@ -197,6 +199,7 @@ public class NPCEmotionController : MonoBehaviour
         if (a == EmotionType.Sad && b == EmotionType.Sad)
         {
             SpawnDeathEffect();
+            AudioManager.Instance.PlaySFXTemporary("sad_vs_sad", 2f);
             Destroy(gameObject);
             Destroy(otherNPC.gameObject);
             return;
@@ -218,11 +221,13 @@ public class NPCEmotionController : MonoBehaviour
         {
             if (Random.value > 0.5f)
             {
+                AudioManager.Instance.PlaySFX("angry_vs_angry");
                 SpawnDeathEffect();
                 Destroy(gameObject);
             }
             else
             {
+                AudioManager.Instance.PlaySFX("angry_vs_angry");
                 otherNPC.SpawnDeathEffect();
                 Destroy(otherNPC.gameObject);
             }
@@ -236,6 +241,7 @@ public class NPCEmotionController : MonoBehaviour
 
         if (a == EmotionType.Love && b == EmotionType.Love)
         {
+            AudioManager.Instance.PlaySFX("love_vs_love");
             if (birthTimer <= 0f && otherNPC.birthTimer <= 0f && neutralNPCPrefab != null)
             {
                 Vector2 offset = Random.insideUnitCircle.normalized * 0.5f;
